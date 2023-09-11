@@ -2,6 +2,7 @@ import argparse
 import concurrent.futures
 import json
 import os
+import shutil
 import subprocess
 import sys
 import uuid
@@ -26,6 +27,11 @@ def run_featureCount(args: tuple) -> str:
     temp_data_bedtools, temp_data = Path(Path.cwd(), random_name_1 + ".bed"), Path(
         Path.cwd(), random_name_2 + ".bed"
     )
+
+    # check if bedtools is installed and accessible
+    if shutil.which("bedtools") is None:
+        print("Error: bedtools is not installed or not in the system's PATH.")
+        sys.exit(1)
 
     # run bedtools
     cmd = f"bedtools intersect -a {path_to_regions_bed} -b {path_to_reads_bed} -wa -wb > {temp_data_bedtools}"
