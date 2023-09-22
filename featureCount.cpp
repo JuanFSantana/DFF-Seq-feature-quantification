@@ -10,10 +10,10 @@
 struct IntervalSize {
     std::string geneName;
     std::string featureName;
-    int startPosition;
-    int endPosition;
-    int startSize;
-    int endSize;
+    int startPosition = 0;
+    int endPosition = 0;
+    int startSize = 0;
+    int endSize = 0;
     int count = 0;  // to store the count of sizes falling in this interval
     double normCount = 0.0;  // to store the count of sizes falling in this interval normalized by correction factor
 };
@@ -116,16 +116,16 @@ void makeIntervalStruct(const nlohmann::json& data, std::vector<IntervalSize>& i
 void countFeatures(std::vector<IntervalSize>& intervals, std::ifstream& readsBed, const size_t numOfFeatures, ObjectType readAnalysisType, double correctionFactor) {
     // declare variables to store bed file information from bedtools output
     std::string regionChr; // col1
-    int regionStart; // col2
-    int regionEnd; // col3
+    int regionStart = 0; // col2
+    int regionEnd = 0; // col3
     std::string regionGene; // col4
     std::string additionalInfo1; // col5
     std::string regionStrand; // col6      
     std::string readsChr; // col7
-    int readsStart; // col8
-    int readsEnd; // col9
+    int readsStart = 0; // col8
+    int readsEnd = 0; // col9
     std::string readsID; // col 10 
-    int readsQual; // col 11
+    int readsQual = 0; // col 11
     std::string readsStrand; // col12 
 
     size_t currentIntervalIndex1 = 0;
@@ -137,10 +137,10 @@ void countFeatures(std::vector<IntervalSize>& intervals, std::ifstream& readsBed
     while (readsBed >> regionChr >> regionStart >> regionEnd >> regionGene >> additionalInfo1 >> regionStrand >> readsChr >> readsStart >> readsEnd >> readsID >> readsQual >> readsStrand) {
         int readSize = (readsEnd - readsStart) + 1;
         std::string current_gene = regionGene;
-        int readBasePositionStart;
-        int readBasePositionEnd;
+        int readBasePositionStart = 0;
+        int readBasePositionEnd = 0;
         int positionTSS = (regionStart + regionEnd) / 2;
-        float readCenter;
+        float readCenter = 0.0;
         // calculate read position relative to TSS in the middle of the region
         if (regionStrand == "+"){
             readBasePositionStart = readsStart - positionTSS;
