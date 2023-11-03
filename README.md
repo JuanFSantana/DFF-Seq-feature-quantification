@@ -50,7 +50,7 @@ regions: <str> Bed file of genomic regions of chosen length. The regions should 
 
 -s: <int | float> Correction factors - must be 1 per dataset (-f) space separated. The correction factors should be in the same order as the datasets provided with -f
 
--o: <str> Path to output, for example -o /home/user/dir/results.tx
+-o: <str> Path to output, for example -o /home/user/dir/results.txt
 
 ```
 
