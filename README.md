@@ -34,7 +34,7 @@ python3 dff_seq_feature_count.py plusminus1000_from_TSS_1000genes.bed \
         -f PolII-DFF-ChIP-Seq-Rep1.bed -20 90 40 65 -60 60 65 10 \
         -n Free-Pol-II PIC \
         -t centers \
-        -o /home/user/dir/results.txt \
+        -o /dir/results.txt \
         -s 0.5
 
 ```
@@ -50,7 +50,7 @@ regions: <str> Bed file of genomic regions of chosen length. The regions should 
 
 -s: <int | float> Correction factors - must be 1 per dataset (-f) space separated. The correction factors should be in the same order as the datasets provided with -f
 
--o: <str> Path to output, for example -o /home/user/dir/results.txt
+-o: <str> Path to output, for example -o /dir/results.txt
 
 ```
 
