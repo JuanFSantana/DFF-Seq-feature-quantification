@@ -1,5 +1,5 @@
 # dff_seq_feature_count.py #
-Juan F. Santana, Ph.D. (<juan-santana@uiowa.edu>), University of Iowa, Iowa City, I.A.
+Juan F. Santana, Ph.D. (<juan-santana@uiowa.edu>), University of Iowa, Iowa City, I.A. As published in [Santana et al., 2024](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkad1253/7513806).
 
 Digestion with human DNA fragmentation factor (DFF) followed by immunoprecipitation and sequencing (DFF-Seq-ChIP) precisely reveals the relationship between DNA-interacting proteins and chromatin [Santana et al., 2022](https://academic.oup.com/nar/article/50/16/9127/6659871), [Spector et al., 2022](https://www.nature.com/articles/s41467-022-29739-x), [Ball et al., 2022a](https://www.mdpi.com/1999-4915/14/4/779), and [Ball et al., 2022b](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9239164/).
 
